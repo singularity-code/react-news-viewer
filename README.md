@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### News API
+https://newsapi.org/v2/everything?q=apple&from=2021-11-03&to=2021-11-03&sortBy=popularity&apiKey=
+https://newsapi.org/v2/everything?q=tesla&from=2021-10-04&sortBy=publishedAt&apiKey=
+
+https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=
+https://newsapi.org/v2/top-headlines?country=kr&apiKey=API_KEY
