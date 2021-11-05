@@ -6,8 +6,26 @@ const NewsItemBlock = styled.div`
 
 	.thumbnail {
 		margin-right: 1rem;
+		img {
+			display: block;
+			width: 160px;
+			height: 100px;
+			object-fit: cover;
+		}
 	}
 	.contents {
+		h2 {
+			margin: 0;
+			a {
+				color: black;
+			}
+		}
+		p {
+			margin: 0;
+			line-height: 1.5;
+			margin-top: 0.5 rem;
+			white-space: normal;
+		}
 	}
 	& + & {
 		margin-top: 3rem;
