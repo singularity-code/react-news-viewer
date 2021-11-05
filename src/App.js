@@ -5,7 +5,12 @@ import NewsList from './components/NewsList';
 
 const App = () => {
 	const [data, setData] = useState(null);
-  const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=` + keys.news
+	const url =
+		`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=` +
+		keys.news;
+	const url_apple =
+		`https://newsapi.org/v2/top-headlines?country=kr&apiKey=` +
+		keys.news;
 	// const onClick = () => {
 	// 	axios.get('https://jsonplaceholder.typicode.com/todos/1').then((r) => {
 	// 		setData(r.data);
@@ -23,7 +28,7 @@ const App = () => {
 	};
 	return (
 		<div>
-			<NewsList></NewsList>
+			<NewsList url={url_apple}></NewsList>
 		</div>
 	);
 };
