@@ -11,12 +11,6 @@ const App = () => {
 	const url_apple =
 		`https://newsapi.org/v2/top-headlines?country=kr&apiKey=` +
 		keys.news;
-	// const onClick = () => {
-	// 	axios.get('https://jsonplaceholder.typicode.com/todos/1').then((r) => {
-	// 		setData(r.data);
-	// 	});
-	// };
-
 	// Async
 	const onClick = async () => {
 		try {
