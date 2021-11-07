@@ -47,7 +47,7 @@ const Category = styled.div`
 	font-size: 1.125rem;
 	cursor: pointer;
 	white-space: pre;
-	text-text-decoration: none;
+	text-decoration: none;
 	color: inherit;
 	padding-bottom: 0.25rem;
 
@@ -60,12 +60,18 @@ const Category = styled.div`
 	}
 `;
 
-const Categories = () => {
+const Categories = ({ category, onSelect }) => {
 	return (
 		<div>
 			<CategoryBlock>
 				{categories.map((c) => (
-					<Category key={c.name}>{c.text}</Category>
+					<Category
+						key={c.name}
+						active={category === c.name}
+						onClick={() => onSelect(c.name)}
+					>
+						{c.text}
+					</Category>
 				))}
 			</CategoryBlock>
 		</div>

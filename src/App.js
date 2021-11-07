@@ -5,7 +5,7 @@ import NewsList from './components/NewsList';
 import Categories from './components/Categories';
 
 const App = () => {
-	const [data, setData] = useState(null);
+	//const [data, setData] = useState(null);
 	const [category, setCategory] = useState('all');
 	const onSelect = useCallback(() => {
 		setCategory(category);
@@ -22,15 +22,16 @@ const App = () => {
 	// 	});
 	// };
 
-	// Async
-	const onClick = async () => {
-		try {
-			const r = await axios.get(url);
-			setData(r.data);
-		} catch (e) {
-			console.log(e);
-		}
-	};
+	// Async Example
+	// const onClick = async () => {
+	// 	try {
+	// 		const r = await axios.get(url);
+	// 		setData(r.data);
+	// 	} catch (e) {
+	// 		console.log(e);
+	// 	}
+	// };
+
 	return (
 		<div>
 			<Categories category={category} onSelect={onSelect}></Categories>
