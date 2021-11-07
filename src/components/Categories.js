@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const categories = [
 	{
@@ -54,6 +54,17 @@ const Category = styled.div`
 	&:hover {
 		color: #495057;
 	}
+
+	${(props) =>
+		props.active &&
+		css`
+			font-weight: 600;
+			border-bottom: 2px solid #ff6600;
+			color: #ff6600;
+			&:hover {
+				color: #3bc9db;
+			}
+		`}
 
 	& + & {
 		margin-left: 1rem;
