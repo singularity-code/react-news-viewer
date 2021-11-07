@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
 import axios from 'axios';
+import keys from '../config/api-key.json';
 
 const NewsListBlock = styled.div`
 	box-sizing: border-box;
@@ -16,7 +17,10 @@ const NewsListBlock = styled.div`
 	}
 `;
 
-const NewsList = ({ url }) => {
+const url = `https://newsapi.org/v2/top-headlines?country=kr`;
+const key = `&apiKey=${keys.news}`;
+
+const NewsList = ({ category }) => {
 	const [articles, setArticles] = useState(null);
 	const [loading, setLoading] = useState(false);
 
@@ -24,7 +28,8 @@ const NewsList = ({ url }) => {
 		const fetchData = async () => {
 			setLoading(true);
 			try {
-				const r = await axios.get(url);
+				const query = category === 'all' ? '' : `&category=${category}`;
+				const r = await axios.get(url + query + key);
 				console.log(r);
 				setArticles(r.data.articles);
 			} catch (e) {
@@ -33,7 +38,7 @@ const NewsList = ({ url }) => {
 			setLoading(false);
 		};
 		fetchData();
-	}, []);
+	}, [category]);
 
 	if (loading) {
 		return <NewsListBlock>Loading...</NewsListBlock>;

@@ -7,15 +7,11 @@ import Categories from './components/Categories';
 const App = () => {
 	//const [data, setData] = useState(null);
 	const [category, setCategory] = useState('all');
-	const onSelect = useCallback(() => {
+	const onSelect = useCallback((category) => {
 		setCategory(category);
 	}, []);
-	const url =
-		`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=` +
-		keys.news;
-	const url_apple =
-		`https://newsapi.org/v2/top-headlines?country=kr&apiKey=` + keys.news;
 
+	// Example
 	// const onClick = () => {
 	// 	axios.get('https://jsonplaceholder.typicode.com/todos/1').then((r) => {
 	// 		setData(r.data);
@@ -35,7 +31,7 @@ const App = () => {
 	return (
 		<div>
 			<Categories category={category} onSelect={onSelect}></Categories>
-			<NewsList category={category} url={url_apple}></NewsList>
+			<NewsList category={category}></NewsList>
 		</div>
 	);
 };
