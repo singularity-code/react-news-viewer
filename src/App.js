@@ -1,33 +1,12 @@
 import React, { useState, useCallback } from 'react';
-import axios from 'axios';
-import keys from './config/api-key.json';
-import NewsList from './components/NewsList';
+import { Route, Routes } from 'react-router-dom';
+import NewsPage from './pages/NewsPage';
 import Categories from './components/Categories';
+import NewsList from './components/NewsList';
 
 const App = () => {
-	//const [data, setData] = useState(null);
 	const [category, setCategory] = useState('all');
-	const onSelect = useCallback((category) => {
-		setCategory(category);
-	}, []);
-
-	// Example
-	// const onClick = () => {
-	// 	axios.get('https://jsonplaceholder.typicode.com/todos/1').then((r) => {
-	// 		setData(r.data);
-	// 	});
-	// };
-
-	// Async Example
-	// const onClick = async () => {
-	// 	try {
-	// 		const r = await axios.get(url);
-	// 		setData(r.data);
-	// 	} catch (e) {
-	// 		console.log(e);
-	// 	}
-	// };
-
+	const onSelect = useCallback((category) => setCategory(category), []);
 	return (
 		<div>
 			<Categories category={category} onSelect={onSelect}></Categories>
