@@ -3,24 +3,27 @@ import styled from 'styled-components';
 
 const NewsItemBlock = styled.div`
 	display: flex;
+	margin-top: 1rem;
 
 	.thumbnail {
 		margin-right: 1rem;
+		margin-top: 1rem;
 		img {
 			display: block;
-			width: 160px;
-			height: 100px;
+			width: 120px;
+			height: 80px;
 			object-fit: cover;
 		}
 	}
 	.contents {
-		h2 {
+		h3 {
 			margin: 0;
 			a {
 				color: black;
 			}
 		}
 		p {
+			font-size: 0.8rem;
 			margin: 0;
 			line-height: 1.5;
 			margin-top: 0.5 rem;
@@ -44,12 +47,12 @@ const NewsItem = ({ article }) => {
 						</a>
 					</div>
 				)}
-				<div>
-					<h2>
+				<div className="contents">
+					<h3>
 						<a href={url} target="_blank" rel="noopener noreferrer">
 							{title}
 						</a>
-					</h2>
+					</h3>
 					<p>{description}</p>
 				</div>
 			</NewsItemBlock>

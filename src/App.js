@@ -1,6 +1,4 @@
 import React, { useState, useCallback } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import NewsPage from './pages/NewsPage';
 import Categories from './components/Categories';
 import NewsList from './components/NewsList';
 
