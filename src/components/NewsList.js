@@ -16,8 +16,7 @@ const NewsListBlock = styled.div`
   }
 `;
 
-const country = navigator.language === 'en-GB' ? 'au' : 'kr';
-const url = `https://newsapi.org/v2/top-headlines?country=${country}`;
+const url = `https://newsapi.org/v2/top-headlines?country=au`;
 const key = `&apiKey=${keys.news}`;
 
 const NewsList = ({ category }) => {
